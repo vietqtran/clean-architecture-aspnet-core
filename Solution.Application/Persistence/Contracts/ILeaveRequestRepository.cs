@@ -1,4 +1,4 @@
-﻿using HR.LeaveManagement.Domain;
+﻿using Solution.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +11,6 @@ namespace Solution.Application.Persistence.Contracts
     {
         Task<LeaveRequest> GetLeaveRequestWithDetails (int id);
         Task<List<LeaveRequest>> GetLeaveRequestsWithDetails ( );
+        Task ChangeApprovalStatus (LeaveRequest leaveRequest, bool? ApprovalStatus);
     }
 }

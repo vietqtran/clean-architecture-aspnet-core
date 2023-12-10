@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using Solution.Application.DTOs;
+using Solution.Application.DTOs.LeaveAllocation;
 using System;
 using System.Collections.Generic;
 using System.Linq;

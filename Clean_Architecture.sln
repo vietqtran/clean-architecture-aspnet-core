@@ -15,9 +15,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{E3BB50E6-E08B-432B-AC73-5E7F3D225BC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solution.Domain", "Solution.Domain\Solution.Domain.csproj", "{5BCFA8E3-2A50-4FC0-8005-435A4469CE2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solution.Domain", "Solution.Domain\Solution.Domain.csproj", "{5BCFA8E3-2A50-4FC0-8005-435A4469CE2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solution.Application", "Solution.Application\Solution.Application.csproj", "{12836E3C-4A75-436A-AA52-F4D4C38D55C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solution.Application", "Solution.Application\Solution.Application.csproj", "{12836E3C-4A75-436A-AA52-F4D4C38D55C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{95E764AE-C65B-4414-8D9D-4D416D91F47F}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

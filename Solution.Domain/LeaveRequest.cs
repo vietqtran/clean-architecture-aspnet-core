@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HR.LeaveManagement.Domain
+namespace Solution.Domain
 {
     public class LeaveRequest : BaseDomainEntity
     {

@@ -1,4 +1,4 @@
-﻿using HR.LeaveManagement.Domain;
+﻿using Solution.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
