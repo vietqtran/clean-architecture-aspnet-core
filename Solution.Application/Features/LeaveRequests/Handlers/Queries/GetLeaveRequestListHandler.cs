@@ -2,11 +2,12 @@
 using MediatR;
 using Solution.Application.DTOs.LeaveRequest;
 using Solution.Application.Features.LeaveRequests.Requests.Queries;
-using Solution.Application.Persistence.Contracts;
+using Solution.Application.Contracts.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Solution.Application.Features.LeaveRequests.Handlers.Queries

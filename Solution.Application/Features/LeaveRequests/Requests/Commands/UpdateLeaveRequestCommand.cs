@@ -12,8 +12,8 @@ namespace Solution.Application.Features.LeaveRequests.Requests.Commands
     {
         public int Id { get; set; }
 
-        public UpdateLeaveRequestDto? UpdateLeaveRequestDto { get; set; }
+        public UpdateLeaveRequestDto UpdateLeaveRequestDto { get; set; }
 
-        public ChangeLeaveRequestApprovalDto? ChangeLeaveRequestApprovalDto { get; set; }
+        public ChangeLeaveRequestApprovalDto ChangeLeaveRequestApprovalDto { get; set; }
     }
 }

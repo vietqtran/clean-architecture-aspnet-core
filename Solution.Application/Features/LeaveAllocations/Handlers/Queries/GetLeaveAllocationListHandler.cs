@@ -2,12 +2,13 @@
 using MediatR;
 using Solution.Application.DTOs.LeaveAllocation;
 using Solution.Application.Features.LeaveAllocations.Requests.Queries;
-using Solution.Application.Persistence.Contracts;
+using Solution.Application.Contracts.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Solution.Application.Features.LeaveAllocations.Handlers.Queries
 {

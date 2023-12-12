@@ -1,16 +1,14 @@
 ﻿using FluentValidation;
 using Solution.Application.DTOs.LeaveRequest;
-using Solution.Application.Persistence.Contracts;
+using Solution.Application.Contracts.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Solution.Application.DTOs.LeaveRequest.Validators
-{
-    public class ILeaveRequestDtoValidator : AbstractValidator<ILeaveRequestDto>
-    {
+namespace Solution.Application.DTOs.LeaveRequest.Validators {
+    public class ILeaveRequestDtoValidator : AbstractValidator<ILeaveRequestDto> {
         private readonly ILeaveRequestRepository _leaveRequestRepository;
 
         public ILeaveRequestDtoValidator (ILeaveRequestRepository leaveRequestRepository)

@@ -3,12 +3,13 @@ using MediatR;
 using Solution.Application.DTOs.LeaveType.Validators;
 using Solution.Application.Exceptions;
 using Solution.Application.Features.LeaveTypes.Requests.Commands;
-using Solution.Application.Persistence.Contracts;
+using Solution.Application.Contracts.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Solution.Application.Features.LeaveTypes.Handler.Commands
 {
@@ -27,7 +28,8 @@ namespace Solution.Application.Features.LeaveTypes.Handler.Commands
         {
             var validator = new UpdateLeaveTypeDtoValidator();
             var validationResult = await validator.ValidateAsync(request.LeaveTypeDto);
-            if (validationResult.IsValid == false) {
+            if (validationResult.IsValid == false)
+            {
                 throw new ValidationException(validationResult);
             }
             var leaveType = await _leaveTypeRepository.GetAsync(request.LeaveTypeDto.Id);

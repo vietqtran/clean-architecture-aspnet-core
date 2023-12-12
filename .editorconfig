@@ -25,6 +25,9 @@ dotnet_diagnostic.CS8604.severity = none
 # CS8618: Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 dotnet_diagnostic.CS8618.severity = none
 
+# CS0168: Variable is declared but never used
+dotnet_diagnostic.CS0168.severity = none
+
 [*.{cs,vb}]
 #### Naming styles ####
 

@@ -3,12 +3,13 @@ using MediatR;
 using Solution.Application.DTOs.LeaveRequest.Validators;
 using Solution.Application.Exceptions;
 using Solution.Application.Features.LeaveRequests.Requests.Commands;
-using Solution.Application.Persistence.Contracts;
+using Solution.Application.Contracts.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Solution.Application.Features.LeaveRequests.Handlers.Commands
 {
@@ -27,18 +28,22 @@ namespace Solution.Application.Features.LeaveRequests.Handlers.Commands
         {
             var validator = new UpdateLeaveRequestDtoValidator(_leaveRequestRepository);
             var validationResult = await validator.ValidateAsync(request.UpdateLeaveRequestDto);
-            if (validationResult.IsValid == false) {
+            if (validationResult.IsValid == false)
+            {
                 throw new ValidationException(validationResult);
             }
             var leaveRequest = await _leaveRequestRepository.GetAsync(request.Id);
 
-            if (request.UpdateLeaveRequestDto != null) {
+            if (request.UpdateLeaveRequestDto != null)
+            {
 
                 _mapper.Map(request.UpdateLeaveRequestDto, leaveRequest);
 
                 await _leaveRequestRepository.Update(leaveRequest);
 
-            } else if (request.ChangeLeaveRequestApprovalDto != null) {
+            }
+            else if (request.ChangeLeaveRequestApprovalDto != null)
+            {
 
                 leaveRequest.Approved = request.ChangeLeaveRequestApprovalDto.Approved;
 

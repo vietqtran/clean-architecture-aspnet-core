@@ -2,7 +2,7 @@
 using Solution.Domain;
 using MediatR;
 using Solution.Application.Features.LeaveTypes.Requests.Commands;
-using Solution.Application.Persistence.Contracts;
+using Solution.Application.Contracts.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Solution.Application.DTOs.LeaveType.Validators;
 using Solution.Application.Exceptions;
+using System.Threading;
 
 namespace Solution.Application.Features.LeaveTypes.Handler.Commands
 {
@@ -28,7 +29,8 @@ namespace Solution.Application.Features.LeaveTypes.Handler.Commands
         {
             var validator = new CreateLeaveTypeDtoValidator();
             var validationResult = await validator.ValidateAsync(request.CreateLeaveTypeDto);
-            if (validationResult.IsValid == false) {
+            if (validationResult.IsValid == false)
+            {
                 throw new ValidationException(validationResult);
             }
             var leaveType = _mapper.Map<LeaveType>(request.CreateLeaveTypeDto);

@@ -1,15 +1,13 @@
 ﻿using FluentValidation;
-using Solution.Application.Persistence.Contracts;
+using Solution.Application.Contracts.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Solution.Application.DTOs.LeaveAllocation.Validators
-{
-    public class ILeaveAllocationDtoValidator : AbstractValidator<ILeaveAllocationDto>
-    {
+namespace Solution.Application.DTOs.LeaveAllocation.Validators {
+    public class ILeaveAllocationDtoValidator : AbstractValidator<ILeaveAllocationDto> {
         private readonly ILeaveTypeRepository _leaveTypeRepository;
 
         public ILeaveAllocationDtoValidator (ILeaveTypeRepository leaveTypeRepository)

@@ -1,13 +1,14 @@
 ﻿using AutoMapper;
 using MediatR;
 using Solution.Application.Features.LeaveAllocations.Requests.Commands;
-using Solution.Application.Persistence.Contracts;
+using Solution.Application.Contracts.Persistence;
 using Solution.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Solution.Application.Features.LeaveAllocations.Handlers.Commands
 {
@@ -24,8 +25,8 @@ namespace Solution.Application.Features.LeaveAllocations.Handlers.Commands
 
         public async Task<Unit> Handle (UpdateLeaveAllocationCommand request, CancellationToken cancellationToken)
         {
-            var leaveAllocation = await _leaveAllocationRepository.GetAsync(request.LeaveAllocationDto.Id);
-            _mapper.Map(request.LeaveAllocationDto, leaveAllocation);
+            var leaveAllocation = await _leaveAllocationRepository.GetAsync(request.UpdateLeaveAllocationDto.Id);
+            _mapper.Map(request.UpdateLeaveAllocationDto, leaveAllocation);
             await _leaveAllocationRepository.Update(leaveAllocation);
             return Unit.Value;
         }
